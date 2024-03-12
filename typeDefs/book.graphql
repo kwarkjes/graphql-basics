@@ -6,8 +6,9 @@
 # }
 
 type Book {
+  id: ID
   title: String
-  author: String
+  author: Author
   # genre: BookGenre
   # price: Int
 }
