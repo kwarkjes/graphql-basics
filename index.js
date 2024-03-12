@@ -1,34 +1,20 @@
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { buildSubgraphSchema } from "@apollo/subgraph";
+import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
+import { loadTypedefs } from '@graphql-tools/load';
+import resolvers from "./resolvers.js";
 
-const resolvers = {
-  Query: {
-    books: () => [
-      {
-        title: 'The Awakening',
-        author: 'Kate Chopin',
-      },
-      {
-        title: 'City of Glass',
-        author: 'Paul Auster',
-      },
-    ],
-  },
-};
+const sources = await loadTypedefs(`./typeDefs/**/*.graphql`, {
+  loaders: [new GraphQLFileLoader()],
+});
 
-const typeDefs = `#graphql
-  type Book {
-    title: String
-    author: String
-  }
-  type Query {
-    books: [Book]
-  }
-`;
+const typeDefs = sources.map((source) => source.document);
+const schema = buildSubgraphSchema({ typeDefs, resolvers });
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+const server = new ApolloServer({ 
+  schema, 
+  context: { foo: 'bar'}
 });
 
 const { url } = await startStandaloneServer(server, {
