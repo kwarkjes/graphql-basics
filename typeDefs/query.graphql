@@ -1,4 +1,4 @@
 type Query {
   books: [Book]
-  # books(id: String): [Book]
+  libraries: [Library]
 }
