@@ -1,3 +1,3 @@
 # Content
 
-- Let's create multiple graphql instances
+- Let's glue all the instances together

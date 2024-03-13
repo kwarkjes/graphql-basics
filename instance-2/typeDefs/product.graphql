@@ -4,4 +4,5 @@ type Product {
   image: String
   ingredients: [String]
   available: Boolean
+  price: Price
 }
