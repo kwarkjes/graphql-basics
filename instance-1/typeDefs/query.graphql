@@ -1,4 +1,4 @@
 type Query {
   books: [Book]
-  # libraries: [Library]
+  libraries: [Library]
 }

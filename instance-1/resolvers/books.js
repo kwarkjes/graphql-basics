@@ -4,17 +4,17 @@ export default (_, args, context) => {
     {
       title: "The Awakening",
       author: "Kate Chopin",
-      // genre: "ROMANCE",
+      genre: "ROMANCE",
     },
     {
       title: "City of Glass",
       author: "Paul Auster",
-      // genre: "MYSTERY",
+      genre: "MYSTERY",
     },
     {
       title: "Parry Hotter",
       author: "Dwight",
-      // genre: "MYSTERY",
+      genre: "MYSTERY",
       // foobar: "Hello world"
     },
   ]

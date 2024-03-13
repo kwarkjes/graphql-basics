@@ -1,0 +1,14 @@
+enum BookGenre {
+  FANTASY
+  SCIENCE_FICTION
+  MYSTERY
+  ROMANCE
+}
+
+type Book {
+  id: ID
+  title: String
+  author: Author
+  genre: BookGenre
+  price: Int
+}

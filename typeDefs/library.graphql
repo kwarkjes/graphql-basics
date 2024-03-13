@@ -1,5 +1,0 @@
-# type Library {
-#   name: String
-#   address: Address
-#   books: [Book]
-# }

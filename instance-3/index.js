@@ -13,12 +13,11 @@ const typeDefs = sources.map((source) => source.document);
 const schema = buildSubgraphSchema({ typeDefs, resolvers });
 
 const server = new ApolloServer({ 
-  schema, 
-  context: { foo: 'bar'}
+  schema
 });
 
 const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port: 4003 },
 });
 
 console.log(`🚀  Server ready at: ${url}`);

@@ -1,0 +1,12 @@
+enum Currency {
+  EUR
+  JPY
+  USD
+}
+
+type Price {
+  price: Float
+  inPromo: Boolean
+  promoPrice: Float
+  currency: Currency
+}

@@ -1,0 +1,4 @@
+type Recipe {
+  name: String
+  ingredients: [String]
+}
